@@ -1,0 +1,74 @@
+#server:
+#  port: 8088
+
+spring:
+  devtools:
+    livereload:
+      port: 35731
+  servlet:
+#    文件上传
+    multipart:
+      #单个文件大小
+      max-file-size: 10MB
+      max-request-size: 100MB
+#     数据库配置
+  datasource:
+    url: jdbc:mysql://192.168.23.129:3306/book?useSSL=false
+    password: wsy3880703
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+
+#    德鲁伊数据源
+    druid:
+      stat-view-servlet:
+        login-username: admin
+        login-password: admin
+        enabled: true
+        reset-enable: false
+      web-stat-filter:
+        enabled: true
+
+      filters: stat,wall
+      aop-patterns: com.springboot5.*
+      filter:
+        stat:
+          enabled: true
+          slow-sql-millis: 1000
+          log-slow-sql: true
+        wall:
+          enabled: true
+
+
+
+
+
+  jdbc:
+    template:
+      query-timeout: 3
+
+      #    redis 配置
+
+
+  redis:
+#    ip
+    host: 192.168.23.129
+#    端口
+    port: 6379
+    #    连接超时市场
+    connect-timeout: 10s
+    #连接类型 jedis连接/Lettuce连接
+    client-type: jedis
+    jedis:
+      pool:
+        max-active: 10  #最大连接数
+
+#      mybatis配置规则
+mybatis:
+#  mybatis全局配置文件
+#  config-location: classpath:mybatis/mybatis-config.xml
+  #  mapper配置文件
+  mapper-locations: classpath:mybatis/mapper/*.xml
+
+#驼峰命名
+  configuration:
+    map-underscore-to-camel-case: true

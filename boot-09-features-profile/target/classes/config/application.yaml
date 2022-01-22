@@ -1,0 +1,6 @@
+spring:
+  profiles:
+    active: test  #默认配置文件 指定激活的环境
+
+
+

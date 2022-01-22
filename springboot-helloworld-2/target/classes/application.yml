@@ -1,0 +1,21 @@
+person:
+  userName: zhangsan
+  boss: true
+  birth: 1997/08/15
+  age: 18
+  pet:
+    name: 阿猫
+    weight: 999
+  interests: [篮球,足球]
+  animal:
+    - jerry
+    - mario
+  score:
+    english: [10,20,30]
+    math: [30,40,50]
+  salarys: [9999,1111,2222]
+  allPets:
+    sick:
+      - {name: tom,weight: 999}
+#      - {weight: 999}
+    health: [{name: mario,weight: 999}]

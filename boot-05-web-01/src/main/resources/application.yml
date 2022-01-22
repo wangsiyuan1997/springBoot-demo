@@ -1,0 +1,13 @@
+#spring:
+#  mvc:
+#    static-path-pattern: /resources/**
+
+#开启rest风格
+spring:
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true
+#开启浏览器 请求参数方式内容协商模式  在浏览器后加format=xml 或者json
+    contentnegotiation:
+      favor-parameter: true
